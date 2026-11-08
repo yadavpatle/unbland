@@ -1,13 +1,19 @@
-# flutter-craft
+# Unbland
 
-An agent skill for Flutter apps that makes screens look designed, not generated, and keeps an
-accessibility floor. Works with [Claude Code](https://docs.claude.com/en/docs/claude-code/skills)
-and [Kiro](https://kiro.dev).
+Anti-AI-slop design skill for Flutter™ apps. Works with
+[Claude Code](https://docs.claude.com/en/docs/claude-code/skills) and [Kiro](https://kiro.dev).
 
-It audits for AI design tells (decorative gradients, glow, glass, emoji icons, tracked-caps
-eyebrows, card-in-card, template copy), mobile UX defects (contrast, 48dp targets, text
-scaling, missing loading/empty/error states, reduce motion) and drift from your project's own
-design system. It also covers store screenshots, feature graphics and promo videos.
+Unbland audits screens, store screenshots and promo assets for the defaults AI generators
+reach for, and for the accessibility gaps they leave behind. Then it fixes them inside your
+app's own design system instead of swapping one cliché for another.
+
+- **AI design tells:** decorative gradients, glow, glass, emoji icons, tracked-caps eyebrows,
+  card-in-card, template copy
+- **Mobile UX defects:** contrast, 48dp targets, text scaling, missing loading/empty/error
+  states, reduce motion, safe areas
+- **Design-system drift:** raw colours, inline font sizes, off-scale spacing
+- **Product truth:** no invented stats, testimonials or features; no "free"/"best"/"#1" on
+  store preview assets
 
 ## Modes
 
@@ -20,54 +26,61 @@ design system. It also covers store screenshots, feature graphics and promo vide
 
 Findings are tiered: **Floor** (F1–F12, never waivable), **Reflex** (R1–R18, fix or waive on
 the record) and **Polish** (P1–P10, advisory). See
-[`skills/flutter-craft/references/gates.md`](skills/flutter-craft/references/gates.md).
+[`skills/unbland/references/gates.md`](skills/unbland/references/gates.md).
 
 ## Install
 
-Copy `skills/flutter-craft` into your Flutter project.
+Copy `skills/unbland` into your project's skills folder:
 
-**Claude Code** (project): `.claude/skills/flutter-craft/`
-**Claude Code** (all projects): `~/.claude/skills/flutter-craft/`
-**Kiro** (project): `.kiro/skills/flutter-craft/`
+| Agent | Path |
+| --- | --- |
+| Claude Code, one project | `.claude/skills/unbland/` |
+| Claude Code, all projects | `~/.claude/skills/unbland/` |
+| Kiro, one project | `.kiro/skills/unbland/` |
 
 macOS / Linux:
 
 ```sh
-git clone https://github.com/<you>/flutter-craft /tmp/flutter-craft
+git clone https://github.com/yadavpatle/unbland /tmp/unbland
 mkdir -p .claude/skills            # or .kiro/skills
-cp -r /tmp/flutter-craft/skills/flutter-craft .claude/skills/
+cp -r /tmp/unbland/skills/unbland .claude/skills/
 ```
 
 Windows (PowerShell):
 
 ```powershell
-git clone https://github.com/<you>/flutter-craft $env:TEMP\flutter-craft
+git clone https://github.com/yadavpatle/unbland $env:TEMP\unbland
 New-Item -ItemType Directory -Force .claude\skills | Out-Null   # or .kiro\skills
-Copy-Item -Recurse $env:TEMP\flutter-craft\skills\flutter-craft .claude\skills\
+Copy-Item -Recurse $env:TEMP\unbland\skills\unbland .claude\skills\
 ```
 
 ## Use
 
-Ask the agent in plain words ("audit the home screen", "does this look AI-generated",
-"polish lib/features/profile") or invoke `/flutter-craft audit lib`.
+Ask in plain words ("audit the home screen", "does this look AI-generated", "polish
+lib/features/profile") or invoke `/unbland audit lib`.
 
 ## craftlint
 
-The skill ships a zero-dependency linter (Node 18+) for the code-certain checks. Run it from
+Unbland ships a zero-dependency linter (Node 18+) for the code-certain checks. Run it from
 your project root:
 
 ```sh
-node .claude/skills/flutter-craft/scripts/craftlint.mjs lib --summary
-node .claude/skills/flutter-craft/scripts/craftlint.mjs lib --gate F1,F6
-node .claude/skills/flutter-craft/scripts/craftlint.mjs contrast "#FFFFFF" "#C6F432"
-node .claude/skills/flutter-craft/scripts/craftlint.mjs tokens
+node .claude/skills/unbland/scripts/craftlint.mjs lib --summary
+node .claude/skills/unbland/scripts/craftlint.mjs lib --gate F1,F6
+node .claude/skills/unbland/scripts/craftlint.mjs contrast "#FFFFFF" "#C6F432"
+node .claude/skills/unbland/scripts/craftlint.mjs tokens
 ```
 
 Optional project settings go in `craft.config.json` at the project root; see
-[`references/config.md`](skills/flutter-craft/references/config.md). A design contract
+[`references/config.md`](skills/unbland/references/config.md). A design contract
 (`DESIGN.md`) can be started from
-[`references/contract-template.md`](skills/flutter-craft/references/contract-template.md).
+[`references/contract-template.md`](skills/unbland/references/contract-template.md).
 
 ## License
 
 [MIT](LICENSE)
+
+---
+
+Flutter and the related logo are trademarks of Google LLC. Unbland is not endorsed by or
+affiliated with Google LLC.

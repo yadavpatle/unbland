@@ -1,6 +1,6 @@
 # <App name> design contract
 
-The direction every flutter-craft mode works inside. Change this file (with the owner's
+The direction every unbland mode works inside. Change this file (with the owner's
 yes) instead of drifting screen by screen. Save it as `DESIGN.md` at the root, or anywhere
 and point `craft.config.json` → `contract` at it. Date the facts; re-check paths before
 quoting line numbers.

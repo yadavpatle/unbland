@@ -1,6 +1,6 @@
 # Gates
 
-The one list of what flutter-craft refuses. `craftlint.mjs` implements the gates marked
+The one list of what unbland refuses. `craftlint.mjs` implements the gates marked
 **M**; the rest are judged. If the script and this file disagree, this file wins. "Theme
 token" means the project's colour class (`AppColors.*` by default) or `ColorScheme`.
 

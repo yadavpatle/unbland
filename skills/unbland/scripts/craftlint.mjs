@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// craftlint: static checks for the flutter-craft skill. Zero dependencies, Node 18+.
+// craftlint: static checks for the unbland skill. Zero dependencies, Node 18+.
 //
 //   node <skill-dir>/scripts/craftlint.mjs [paths...] [--gate F6,R4] [--max 15] [--summary] [--json] [--config file]
 //   node <skill-dir>/scripts/craftlint.mjs contrast <fg> <bg> [--base <hex>]

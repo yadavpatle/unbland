@@ -1,7 +1,7 @@
 ---
-name: flutter-craft
+name: unbland
 description: >
-  Design-quality skill for Flutter mobile apps (plus their store screenshots, feature
+  Anti-AI-slop design skill for Flutter mobile apps (plus their store screenshots, feature
   graphics and promo videos) that makes screens look made, not generated, and holds an
   accessibility floor. Audits for AI design tells (decorative gradients, glow, glass, emoji
   icons, tracked-caps eyebrows, box-everything cards, template copy), mobile UX defects
@@ -9,11 +9,13 @@ description: >
   and drift from the project's own design system. Modes: audit (report only), fix (surgical
   edits), build (new screen), promo (marketing assets). Use for "audit the UI", "does this
   look AI-generated", "make this screen beautiful", "design review", "polish this screen",
-  "build a new screen", "check accessibility", /flutter-craft.
+  "build a new screen", "check accessibility", /unbland.
 argument-hint: "audit <path|screen> | fix <path> | build <screen> | promo"
 ---
 
-# Flutter Craft
+# Unbland
+
+Anti-AI-slop design skill for Flutter apps.
 
 Make every screen look like one person with taste designed it for this product, and never
 ship one that fails a person using it. Three ideas carry the skill:
@@ -27,8 +29,8 @@ ship one that fails a person using it. Three ideas carry the skill:
    in context, hierarchy, density and "could this be any other app" need screenshots. Tag
    every finding `code`, `seen` (from a screenshot) or `inferred`.
 
-`<skill-dir>` below is this folder (in Kiro: `.kiro/skills/flutter-craft`; in Claude Code:
-`.claude/skills/flutter-craft`). Run scripts from the project root.
+`<skill-dir>` below is this folder (in Kiro: `.kiro/skills/unbland`; in Claude Code:
+`.claude/skills/unbland`). Run scripts from the project root.
 
 ## The Floor (never waivable)
 
@@ -131,7 +133,7 @@ size first. Render, then view the images before judging.
 ## Report format
 
 ```
-Flutter Craft · <mode> · <scope> · contract: <path | inferred>
+Unbland · <mode> · <scope> · contract: <path | inferred>
 craftlint: FAIL n · WARN n · REFLEX n (top gates: R8 172, R7 191 …)
 
 Floor (fix before ship)
